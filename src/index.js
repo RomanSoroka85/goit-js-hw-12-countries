@@ -8,7 +8,7 @@ const input = document.querySelector('#searchInput')
 input.addEventListener('input', debounce((e)=>{
   fetchCountries(e.target.value)
   input.value = ''
-  }, 700))
+  }, 1700))
 
 
   
