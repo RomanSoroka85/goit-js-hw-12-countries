@@ -6,8 +6,12 @@ import debounce from 'lodash.debounce'
 const input = document.querySelector('#searchInput')
 
 input.addEventListener('input', debounce((e)=>{
+  if (!e.target.value){
+    countries.innerHTML="";
+    return;
+  }
   fetchCountries(e.target.value)
-  input.value = ''
+  // input.value = ''
   }, 1700))
 
 
