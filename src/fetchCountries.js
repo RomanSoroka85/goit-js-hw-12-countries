@@ -19,20 +19,17 @@ export default function fetchCountries(searchQuery) {
     .then((countriesList) => {
       console.log(countriesList);
       console.log(status);
-      if ((countriesList.length === 1)) {
+      if (countriesList.length === 1) {
         createItem(countriesList, template, countries);
       } else if (countriesList.length >= 2 && countriesList.length <= 10) {
         createItem(countriesList, listCountries, countries);
-             }
-      else if (countriesList.length >10) {
-            error({
-                title: "Attantion",
-                text: "to many matches found countries",
-                delay: 2000,
-              });
-
-        }
-                else {
+      } else if (countriesList.length > 10) {
+        error({
+          title: "Attantion",
+          text: "to many matches found countries",
+          delay: 2000,
+        });
+      } else {
         error({
           title: "counrty not found",
           text: "counrty not found",
